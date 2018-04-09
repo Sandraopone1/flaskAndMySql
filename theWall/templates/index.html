@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Wall</title>
+</head>
+<body>
+
+<h1>Login</h1>
+<hr>
+<form action="/login" method="post">
+  <input type="text" name="email" ><br>
+  <input type="password" name="password"><br>
+  <input type="submit" value="Login">
+</form>
+
+<h1>Register</h1>
+<hr>
+<form action="/register" method="post">
+  <input type="text" name="first_name" placeholder="First name"><br>
+  <input type="text" name="last_name" placeholder="Last name"><br>
+  <input type="text" name="email" placeholder="Email address"><br>
+  <input type="password" name="password" placeholder="Password"><br>
+  <input type="password" name="passconf" placeholder="Confirm Password"><br>
+  <input type="submit" value="Register">
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

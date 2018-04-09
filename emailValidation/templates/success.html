@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+	<p>Email Addresses Entered: </p>
+	<table border=1>
+  <tr>  
+    <th>Email</th>
+    <th>Date/Time</th>  
+  </tr>
+  {% for address in all_email: %}
+  <tr>
+	<td>{{ address['email'] }} </td>
+	<td>{{ address['created_at'] }} </td> 
+</tr>
+{% endfor %}
+	</table>
+</body>
+</html>
